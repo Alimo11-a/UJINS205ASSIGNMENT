@@ -1,0 +1,99 @@
+<!--doctype, language, title and heading below-->
+<!DOCTYPE html>
+    <html lang="en">
+    <title>Hagos Abdulalim Jemal</title>
+        <head>
+        <meta charset="UTF-8">
+        <h1>HAGOS'S WEB PAGE</h1>
+            <style>
+            h1{
+                text-align:center;
+            }
+            </style>
+        </head>
+        
+        <!--school details -->
+        <body>
+            <section>
+
+                Name: Hagos Abdulalim Jemal.<br>
+                Department: Computer Science <br>
+                Matriculation Number: UJ/2024/NS/0270<br>
+                Level: 200
+
+            </section>
+
+            <!-- About this page -->
+            <section>
+
+                <h2>About This Page</h2>
+
+                this is my INS 205 assignment.</br>
+                It is a simple static web page</br>
+                to Assess my understandinf of basic HTML5 and CSS programing.
+
+            </section>
+
+            <!-- About me  -->
+            <section>
+
+                <h2>Likes:</h2>
+
+                I am a 19 years old tech savy who is deeply<br>
+                passionate about Cyber security and like to: <br> 
+
+                <ul>
+
+                <li>Swim</li>
+                <li>Play Football</li>
+                <li>Travel</li>
+                
+
+                </ul>
+
+            </section>
+
+            <!-- contact me -->
+            <section>
+
+                <h2>Contact Me</h2>
+                <a href="mailto:2024ns0270@unijos.edu.ng">
+                <button id="send-btn">
+                Send Email
+                </button>
+                </a>
+
+            </section>
+
+            <!--java script-->
+        <script>
+                /* -------------------------------------------------------
+                Matric-number → button colour
+                Replace the matric value below with your own number.
+                ------------------------------------------------------- */
+                const matric = "UJ/2024/NS/0270"; // <-- CHANGE THIS TO YOUR MAT. NO.
+
+            /* CHANGE NOTHING BEYOND THIS POINT - CHANGE NOTHING BEYOND THIS POINT */ 
+
+                function hashString(str) {
+                    let hash = 0;
+                    for (let i = 0; i < str.length; i++) {
+                        hash = (hash * 31 + str.charCodeAt(i)) >>> 0;
+                    }
+                    return hash;
+                }
+
+                // Normalise input
+                const normalised = matric.trim().toUpperCase();
+
+                // Map the hash to a hue value between 0 and 359 degrees
+                const hue = hashString(normalised) % 360;
+
+                // Build an HSL colour: fixed saturation & lightness, varying hue
+                const buttonColour = `hsl(${hue}, 65%, 45%)`;
+
+                // Apply the colour to the Send Email button
+                document.getElementById("send-btn").style.background = buttonColour;
+            </script>
+    </body>
+</html>
